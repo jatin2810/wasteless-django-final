@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+body,html
+    {
+    background-color: rgb(240,240,240);
+    height:100%;
+    padding:0px;
+    margin:0px;
+    }
+.customNav
+    {
+    margin:auto;
+    margin-top:20px;
+    border-radius:55px;
+    background:black !important;
+    width:70%;
+    }
+.customNav p 
+    {
+    color:white;
+    }
+.brand
+    {
+    margin-left:20px;
+    }
+.elements
+    {
+    margin:10px;
+    width:100%;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: flex-end;
+    }
+.elements li
+    {
+    margin-left:15px;
+    margin-right:15px;
+    }
+.elements p:hover
+    {
+    color:grey;
+    transition-timing-function: ease-in-out;
+    transition-duration:0.3s;
+    }
+.nav-link  p 
+    {
+    padding:0px;
+    margin:0px;
+    font-size:1.1em;
+    font-family: 'Nunito Sans', sans-serif;
+    }
+.bottom
+    {
+    background:black;
+    position: absolute;
+    bottom:0px;
+    width:100%;
+    height:120px;
+    color:white;
+    margin:0px;
+    }
+.break
+    {
+    border:0px;
+    height:1px;
+    background:#333333;
+    width:70%;
+    display:block;
+    }
+.socials
+    {
+    width:30%;
+    margin:auto;
+    height:50px;
+    margin-top:10px;
+    }
+.socials > i
+    {
+    font-size:1.3em;
+    color:white;
+    transition-duration:0.3s;
+    transition-timing-function: ease-in-out;
+    }
+.socials > i:first-child:hover 
+    {
+    color:#3C5A99;
+    cursor: pointer;
+    }
+.socials >i:nth-child(2):hover
+    {
+    color:#FF0000;
+    cursor: pointer;
+    }
+.socials >i:nth-child(3):hover
+    {
+    color:#C13584;
+    cursor: pointer;
+    }
+.socials >i:last-child:hover
+    {
+    color:#1DA1F2;
+    cursor: pointer;
+    }
+
+.main
+    {
+    /* display:flex;
+    flex-flow:row wrap;
+    flex-shrink:0;
+    flex-grow:0;
+    justify-content:space-around;
+    align-items:center; */
+    width:100%;
+    flex-shrink:0 !important;
+    margin:0px;
+    flex-grow:0 !important;
+    margin-top:5%;
+    padding-bottom:120px;
+    height:100%;
+    }
+.card
+    {
+    height:auto;
+    width:30%;
+    min-width:25%;
+    padding:20px;
+    margin:10px;
+    background:white;
+    border-radius:15px;
+    transition-property: background;
+    transition-duration:1s !important;
+    transition-timing-function: ease-in-out !important;
+    }
+.card p
+    {
+    text-align:center;
+    font-family: 'Nunito Sans', sans-serif;
+    transition-property: color;
+    transition-duration:1s !important;
+    transition-timing-function: ease-in-out !important;
+    }
+.card h5
+    {
+    margin-top:8%;
+    font-family: 'Nunito Sans', sans-serif;
+    transition-property: color;
+    transition-duration:1s !important;
+    transition-timing-function: ease-in-out !important;
+    }
+.card i
+    {
+    font-size:2.5em;
+    transition-property: color;
+    transition-duration:1s !important;
+    transition-timing-function: ease-in-out !important;
+    }
+.card:hover
+    {
+    background:black;
+    cursor: pointer;
+    }
+.card:hover i,.card:hover p,.card:hover h5
+    {
+    color:white;
+    }
+@media only screen and (max-width: 1000px) {
+    
+        .elements{
+        display:block;
+        }
+        
+        .customNav
+        {
+        transition-duration:0.5s;
+        transition-timing-function: ease-in-out;
+        border-radius: 15px;    
+        }
+        .card   {
+            width:50%;
+        }
+    }

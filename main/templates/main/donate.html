@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+  {% load static %}
+   {% block css%}
+      <link rel ="stylesheet" href= "{% static 'css/home.css' %}" >
+  {% endblock%} 
+  {% block content %}
+        
+        
+        
+        
+    
+    
+      <div style='min-height: 100%;position:relative;padding:0px;'>
+          
+
+
+              <div class = "d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column flex-xl-row flex-grow-1 flex-shrink-0 flex-wrap justify-content-around align-items-center main">
+
+
+                <div onclick='location.href="{% url 'main:recycle' %}";' class="d-flex flex-column align-items-center justify-content-start card">
+                    <i class="fas fa-recycle"></i>
+                  <h5 style='text-align:center;'>Donate Recyclables <br/>(PRAYAAS)</h5>
+                  <hr style='margin:15px;background:#AAA;'class='break'/>
+                  <p>Donate scrap items such as metals and paper towards the PRAYAAS Initiative.</p>
+                </div>
+                <div onclick='location.href="{% url 'main:funds' %}";' class="d-flex flex-column align-items-center justify-content-start card">
+                        <i class="fas fa-funnel-dollar"></i>
+                      <h5>Donate Funds</h5>
+                      <hr style='margin:15px;background:#AAA;'class='break'/>
+                      <p>Support NGO activities towards various causes through direct funding.</p>
+                    </div>
+                <div onclick='location.href="{% url 'main:goods' %}";' class="d-flex flex-column align-items-center justify-content-start card">
+                    <i class="fas fa-box"></i>
+                  <h5>Donate Goods</h5>
+                  <hr style='margin:15px;background:#AAA;'class='break'/>
+                  <p>Donate useful items such as textbooks, backpacks, and other utilities.</p>
+                </div>
+               
+
+              </div> 
+
+
+             
+
+      </div>
+
+
+
+              
+                            
+  
+                
+  {% endblock %}

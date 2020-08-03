@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+  {% load static %}
+   {% block css%}
+      <link rel ="stylesheet" href= "{% static 'css/userprofile.css' %}" >
+  {% endblock%} 
+  {% block content %}
+      <div style='min-height: 100%;position:relative;padding:0px;'>
+          
+ <div class="container profilemain">
+           
+           
+           <div class="userproducts">
+               <p class="sp"><b>Products</b></p>
+               <p>All the products related to your account will be visible here.</p>
+               <p><b>Your Active Products:</b> </p>
+               <div class="actived">
+                  <br>
+                  <!-- replace breaks with cards -->
+                  {% for item in products%}
+                  <div class="card ">
+                    <div class="prodimage">
+                      <img class=" imag" src="/media/{{item.image1}}" alt="product">
+                
+                    </div>
+                    <div class="description">
+                        <p class="good">{{item.name}}</p> 
+                        <p style="font-size:12px;color:green;">{{item.price}}</p>
+                    </div>
+                    <div class="haltbut">
+                        <form action="{% url 'main:delete' pk=item.pk %}" method="POST">
+                            {% csrf_token %}
+                      <button class="hbut" >Delete This Product</button>
+                      </form>
+                    </div>
+                </div>
+             {% endfor %}
+              </div>
+              
+        </div>
+
+
+
+
+      </div>
+      {% endblock %}
+
+
+              

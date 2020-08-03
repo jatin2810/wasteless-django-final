@@ -1,0 +1,55 @@
+  
+  {% extends 'main/base.html' %}
+  {% load static %}
+   {% block css%}
+      <link rel="stylesheet" href="{% static 'css/products.css' %}">
+  {% endblock%} 
+  {% block content %}
+   <br>
+      <div style='min-height: 100%;position:relative;padding:0px;'class='d-flex flex-column justify-content-center '>
+       
+         
+            <div class="search">
+              <button id="click" onclick="myFunction()"><img class="searchimg" src="{%static 'images/search.jpg' %}" onclick="myFunction()"></button>
+              <input type="text" id="myInput"  placeholder="Search for products" title="Type in a name" >
+              <button class="cli" onclick="showall()" >Show All</button>
+            </div>
+
+            <div class="cardscontain">
+              <div class="notavail">
+                <h1>PRODUCT NOT AVAILABLE</h1>
+              </div>
+              <ul class="pro">
+                {% for item in products %}
+                <li>  
+              <div class="card ">
+                <div class="prodimage">
+                  <img class=" imag" src="/media/{{item.image1}} " alt="product">
+            
+                </div>
+                <div class="description">
+                    <p class="good">{{item.name}}</p> 
+                    <p style="font-size:12px;color:green;">{{item.price}}</p>
+                    <a class="btn btn-success"  href="{% url 'main:product'  pk=item.pk %}"> Proceed</a>
+                </div>
+            </div>
+            </li>
+            {% endfor %}
+            
+            </ul>
+            </div>
+  
+
+      </div>
+       {% endblock %}
+     {% block scripts %}
+      <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+      
+  {% endblock %}
+ 
+
+       
+         
+                            
+  
+                

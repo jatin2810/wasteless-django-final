@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WasteLess</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        {% block css %}
+        
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.2-web/css/all.css' %}">
+        
+        
+    </head>
+    <body>
+      <div style='min-height: 100%;position:relative;padding:0px;'>
+          <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-light customNav">
+              <a class="navbar-brand brand" href="#">
+                  <img onclick='location.href="{% url 'main:index' %}";' src="{% static 'images/LOGOB.png' %}"></img></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>   
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              
+                <ul class="navbar-nav elements">
+                  <li onclick='location.href="{% url 'main:index' %}";' class="nav-item active">
+                    <a class="nav-link" href="#"> <p>Home</p> <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li onclick='location.href="{% url 'main:about' %}";' class="nav-item">
+                    <a class="nav-link" href="#"><p>About Us</p></a>
+                  </li>
+                  <li onclick='location.href="{% url 'main:contact' %}";' class='nav-item'>
+                    <a class="nav-link" href="#"><p>Contact Us</p></a>
+                  </li>
+                  <li style="color:white;margin-top:6px;" class="nav-item">
+                     {% if user.is_authenticated %}
+
+                     <li onclick='location.href="{% url 'main:userprofile' %}";' class="nav-item active">
+                    <a class="nav-link" href="#"> <p>Hi {{user.username}}</p> </a>
+                    </li>
+                    <form action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" style=' font-size: 1.1em;color:white;   background: black;box-shadow: 0px 0px 0px transparent;border: 0px solid transparent;text-shadow: 0px 0px 0px transparent;margin-top: 6px' value="Log Out"></input>
+                  </form>
+
+                  
+
+
+                  </li>
+                   {% else %}
+                  <li style="color:white;" class="nav-item">
+                   <a style="color:white" class="nav-link" href="{% url 'accounts:login' %}"><p>Login/Register</p></a>
+                   {% endif %}
+                 </li>
+                  
+                </ul>
+              </div>
+            </nav>
+
+            {% block content %}
+
+            {% endblock %}
+
+              <div class="d-flex flex-column align-items-center bottom">
+                  <div class = "d-flex flex-row justify-content-around align-items-center socials">
+                    <i onclick="location.href = 'http://www.facebook.com';" class="fab fa-facebook"></i>
+                    <i onclick="location.href = 'http://www.youtube.com';"class="fab fa-youtube"></i>
+                    <i onclick="location.href = 'http://www.instagram.com';"class="fab fa-instagram"></i>
+                    <i onclick="location.href = 'http://www.twitter.com';"class="fab fa-twitter"></i>
+                  </div>
+                  <hr class='break'/>
+                  <p style='color:grey;font-size:0.7em;margin:10px;'>DEVELOPED BY CODE BENDERS</p>
+              </div>
+
+      </div>
+
+
+  
+    
+{% block scripts %}
+
+      {% endblock %}
+
+
+ 
+
+
+     
+
+              
+                            
+  
+                
+    </body>
+</html>

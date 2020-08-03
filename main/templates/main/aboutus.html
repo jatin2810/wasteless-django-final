@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block css %}
+<link rel ="stylesheet" href= "{% static 'css/AboutUs.css' %}" >
+{% endblock %}
+{% block content %}
+              <div class = "d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column flex-xl-row flex-grow-1 flex-shrink-0 flex-wrap justify-content-around align-items-center main">
+
+                <div class="d-flex flex-column align-items-center justify-content-start card-article ">  
+                  <h4>About Us</h4>
+                  <hr style='margin:15px;background:#AAA;'class='break'/>
+                  <div class="content">
+                      <p>  The idea is to provide a platform where the sole users are the registered students of the institute.  Any user has an option to sell or to buy. </p>
+                      <p> The user may put up any item such as a book, up for sale.  The user may also view all items available for sale, and request to buy it.  After selecting, the buyer will get an option to call the seller to continue the transaction or a cancel option to cancel the request.</p>  
+                      <p> The buyer may now communicate with the seller to meet up in the college (this is the most viable option as both the buyer and the seller are present in the college) to check the validity of the item and finalize the transaction.  </p>
+                    <p>  Another option available is to donate.  The donor can send a request to donate to the available causes.  The agency can accept the request.  After the request is accepted, contact information will  be exchanged between the sides.  Either side can contact the either to confirm the drop off.</p>
+                        
+                 </div>
+            </div>
+{% endblock %}
